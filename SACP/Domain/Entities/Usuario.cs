@@ -1,0 +1,30 @@
+﻿using Domain.Base;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Domain.Entities
+{
+    public class Usuario : BaseEntity<int>
+    {
+        public Usuario() { }
+
+        public Usuario(int id, string? nome, DateTime? dt_nasci, string? telefone_01, string? telefone_02, string? vinculo)
+        {
+            Nome = nome;
+            Dt_Nasci = dt_nasci;
+            Telefone_01 = telefone_01;
+            Telefone_02 = telefone_02;
+            Vinculo = vinculo;
+
+        }
+
+        public string? Nome { get; set; }
+        public DateTime? Dt_Nasci { get; set; }
+        public string? Telefone_01 { get; set; }
+        public string? Telefone_02 { get; set; }
+        public string? Vinculo { get; set; }
+    }
+}

@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "Ub66EKmS7sEybSNkzcCZp0LGcQMTmEfZnpb3XXc+HKC/bVwq6Rapp1+lYX+FaoQqhzrR4bEInDQfVejTh0in7g==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\lukas\\OneDrive\\Arquivos\\Documentos\\GitHub\\IFSP_SACP\\SACP\\Service\\Service.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\lukas\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\lukas\\.nuget\\packages\\fluentvalidation\\11.8.1\\fluentvalidation.11.8.1.nupkg.sha512",
+    "C:\\Users\\lukas\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512"
+  ],
+  "logs": []
+}

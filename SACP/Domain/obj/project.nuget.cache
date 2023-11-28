@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "DhdL1VKdyVKPzWOdsgCt66i7TNTpnXcqdfdrLgGYv2D+KafaJCkMwnf1Iub5W1fgmVGD+LfHljOEPA7cfdiIAw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\lukas\\OneDrive\\Arquivos\\Documentos\\GitHub\\IFSP_SACP\\SACP\\Domain\\Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\lukas\\.nuget\\packages\\fluentvalidation\\11.8.1\\fluentvalidation.11.8.1.nupkg.sha512"
+  ],
+  "logs": []
+}
