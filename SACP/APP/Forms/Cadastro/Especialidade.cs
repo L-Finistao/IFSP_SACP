@@ -1,4 +1,5 @@
-﻿using System;
+﻿using APP.Base.Cadastro;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,11 +9,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace APP.Forms.Cadastro
+namespace SACP.APP.Cadastros
 {
-    public partial class TESTE : Form
+    public partial class Especialidade : CadastroBase
     {
-        public TESTE()
+        public Especialidade()
         {
             InitializeComponent();
         }

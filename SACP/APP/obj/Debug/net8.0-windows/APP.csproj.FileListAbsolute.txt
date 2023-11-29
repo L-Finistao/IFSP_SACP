@@ -28,7 +28,6 @@ C:\Users\lukas\OneDrive\Arquivos\Documentos\GitHub\IFSP_SACP\SACP\APP\bin\Debug\
 C:\Users\lukas\OneDrive\Arquivos\Documentos\GitHub\IFSP_SACP\SACP\APP\bin\Debug\net8.0-windows\Service.pdb
 C:\Users\lukas\OneDrive\Arquivos\Documentos\GitHub\IFSP_SACP\SACP\APP\obj\Debug\net8.0-windows\APP.csproj.AssemblyReference.cache
 C:\Users\lukas\OneDrive\Arquivos\Documentos\GitHub\IFSP_SACP\SACP\APP\obj\Debug\net8.0-windows\APP.Base.Cadastro.CadastroBase.resources
-C:\Users\lukas\OneDrive\Arquivos\Documentos\GitHub\IFSP_SACP\SACP\APP\obj\Debug\net8.0-windows\APP.Form1.resources
 C:\Users\lukas\OneDrive\Arquivos\Documentos\GitHub\IFSP_SACP\SACP\APP\obj\Debug\net8.0-windows\APP.Forms.Cadastro.Cadastro_Cat_Consulta.resources
 C:\Users\lukas\OneDrive\Arquivos\Documentos\GitHub\IFSP_SACP\SACP\APP\obj\Debug\net8.0-windows\APP.Forms.Cadastro.Cadastro_CID.resources
 C:\Users\lukas\OneDrive\Arquivos\Documentos\GitHub\IFSP_SACP\SACP\APP\obj\Debug\net8.0-windows\APP.Forms.Cadastro.Catastro_Cat_Especialidade.resources
@@ -45,3 +44,9 @@ C:\Users\lukas\OneDrive\Arquivos\Documentos\GitHub\IFSP_SACP\SACP\APP\obj\Debug\
 C:\Users\lukas\OneDrive\Arquivos\Documentos\GitHub\IFSP_SACP\SACP\APP\obj\Debug\net8.0-windows\APP.pdb
 C:\Users\lukas\OneDrive\Arquivos\Documentos\GitHub\IFSP_SACP\SACP\APP\obj\Debug\net8.0-windows\APP.genruntimeconfig.cache
 C:\Users\lukas\OneDrive\Arquivos\Documentos\GitHub\IFSP_SACP\SACP\APP\obj\Debug\net8.0-windows\ref\APP.dll
+C:\Users\lukas\OneDrive\Arquivos\Documentos\GitHub\IFSP_SACP\SACP\APP\obj\Debug\net8.0-windows\IFSPStore.App.FormPrincipal.resources
+C:\Users\lukas\OneDrive\Arquivos\Documentos\GitHub\IFSP_SACP\SACP\APP\obj\Debug\net8.0-windows\SACP.APP.Cadastros.Cadastro_Agenda.resources
+C:\Users\lukas\OneDrive\Arquivos\Documentos\GitHub\IFSP_SACP\SACP\APP\obj\Debug\net8.0-windows\SACP.APP.Cadastros.Cadastro_Medico.resources
+C:\Users\lukas\OneDrive\Arquivos\Documentos\GitHub\IFSP_SACP\SACP\APP\obj\Debug\net8.0-windows\SACP.APP.Cadastros.Cadastro_Procedimento.resources
+C:\Users\lukas\OneDrive\Arquivos\Documentos\GitHub\IFSP_SACP\SACP\APP\obj\Debug\net8.0-windows\SACP.APP.Cadastros.Especialidade.resources
+C:\Users\lukas\OneDrive\Arquivos\Documentos\GitHub\IFSP_SACP\SACP\APP\obj\Debug\net8.0-windows\SACP.APP.Cadastros.UsuarioForm.resources

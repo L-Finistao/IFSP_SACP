@@ -4,7 +4,7 @@
     <Compile Update="Base\Cadastro\CadastroBase.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Form1.cs">
+    <Compile Update="Forms\Cadastro\Cadastro_Agenda.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Forms\Cadastro\Cadastro_Cat_Consulta.cs">
@@ -13,10 +13,22 @@
     <Compile Update="Forms\Cadastro\Cadastro_CID.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Forms\Cadastro\Cadastro_Medico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Cadastro\Cadastro_Procedimento.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Forms\Cadastro\Catastro_Cat_Especialidade.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Forms\Cadastro\TESTE.cs">
+    <Compile Update="Forms\Cadastro\Especialidade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Cadastro\UsuarioForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Extras\FormPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
