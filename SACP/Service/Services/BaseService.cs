@@ -91,6 +91,9 @@ namespace Service.Services
             validator.ValidateAndThrow(obj);
         }
 
-
+        public object Get<T>(Func<object, object> includes)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

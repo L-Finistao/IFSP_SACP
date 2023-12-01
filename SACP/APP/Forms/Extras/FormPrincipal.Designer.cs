@@ -35,14 +35,8 @@
             usuáriosToolStripMenuItem = new ToolStripMenuItem();
             toolStripMenuItem1 = new ToolStripSeparator();
             grupoDeProdutosToolStripMenuItem = new ToolStripMenuItem();
-            produtosToolStripMenuItem = new ToolStripMenuItem();
             toolStripMenuItem2 = new ToolStripSeparator();
-            cidadesToolStripMenuItem = new ToolStripMenuItem();
             clientesToolStripMenuItem = new ToolStripMenuItem();
-            toolStripMenuItem3 = new ToolStripSeparator();
-            vendaToolStripMenuItem = new ToolStripMenuItem();
-            toolStripMenuItem5 = new ToolStripMenuItem();
-            categoriaEspecialidadeToolStripMenuItem = new ToolStripMenuItem();
             relatóriosToolStripMenuItem = new ToolStripMenuItem();
             usuáriosToolStripMenuItem1 = new ToolStripMenuItem();
             procedimentoToolStripMenuItem = new ToolStripMenuItem();
@@ -70,7 +64,7 @@
             // 
             // cadastrosToolStripMenuItem
             // 
-            cadastrosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { toolStripMenuItem4, usuáriosToolStripMenuItem, toolStripMenuItem1, grupoDeProdutosToolStripMenuItem, produtosToolStripMenuItem, toolStripMenuItem2, cidadesToolStripMenuItem, clientesToolStripMenuItem, toolStripMenuItem3, vendaToolStripMenuItem, toolStripMenuItem5, categoriaEspecialidadeToolStripMenuItem });
+            cadastrosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { toolStripMenuItem4, usuáriosToolStripMenuItem, toolStripMenuItem1, grupoDeProdutosToolStripMenuItem, toolStripMenuItem2, clientesToolStripMenuItem });
             cadastrosToolStripMenuItem.Name = "cadastrosToolStripMenuItem";
             cadastrosToolStripMenuItem.Size = new Size(71, 20);
             cadastrosToolStripMenuItem.Text = "&Cadastros";
@@ -78,90 +72,59 @@
             // toolStripMenuItem4
             // 
             toolStripMenuItem4.Name = "toolStripMenuItem4";
-            toolStripMenuItem4.Size = new Size(199, 22);
+            toolStripMenuItem4.Size = new Size(149, 22);
             toolStripMenuItem4.Text = "&Usuários";
+            toolStripMenuItem4.Click += toolStripMenuItem4_Click;
             // 
             // usuáriosToolStripMenuItem
             // 
             usuáriosToolStripMenuItem.Name = "usuáriosToolStripMenuItem";
-            usuáriosToolStripMenuItem.Size = new Size(199, 22);
+            usuáriosToolStripMenuItem.Size = new Size(149, 22);
             usuáriosToolStripMenuItem.Text = "&Medico";
+            usuáriosToolStripMenuItem.Click += usuáriosToolStripMenuItem_Click;
             // 
             // toolStripMenuItem1
             // 
             toolStripMenuItem1.Name = "toolStripMenuItem1";
-            toolStripMenuItem1.Size = new Size(196, 6);
+            toolStripMenuItem1.Size = new Size(146, 6);
             // 
             // grupoDeProdutosToolStripMenuItem
             // 
             grupoDeProdutosToolStripMenuItem.Name = "grupoDeProdutosToolStripMenuItem";
-            grupoDeProdutosToolStripMenuItem.Size = new Size(199, 22);
+            grupoDeProdutosToolStripMenuItem.Size = new Size(149, 22);
             grupoDeProdutosToolStripMenuItem.Text = "&Agenda";
-            // 
-            // produtosToolStripMenuItem
-            // 
-            produtosToolStripMenuItem.Name = "produtosToolStripMenuItem";
-            produtosToolStripMenuItem.Size = new Size(199, 22);
-            produtosToolStripMenuItem.Text = "&Consulta";
+            grupoDeProdutosToolStripMenuItem.Click += grupoDeProdutosToolStripMenuItem_Click;
             // 
             // toolStripMenuItem2
             // 
             toolStripMenuItem2.Name = "toolStripMenuItem2";
-            toolStripMenuItem2.Size = new Size(196, 6);
-            // 
-            // cidadesToolStripMenuItem
-            // 
-            cidadesToolStripMenuItem.Name = "cidadesToolStripMenuItem";
-            cidadesToolStripMenuItem.Size = new Size(199, 22);
-            cidadesToolStripMenuItem.Text = "C&idades";
+            toolStripMenuItem2.Size = new Size(146, 6);
             // 
             // clientesToolStripMenuItem
             // 
             clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            clientesToolStripMenuItem.Size = new Size(199, 22);
+            clientesToolStripMenuItem.Size = new Size(149, 22);
             clientesToolStripMenuItem.Text = "&Procedimento";
-            clientesToolStripMenuItem.Click += clientesToolStripMenuItem_Click;
-            // 
-            // toolStripMenuItem3
-            // 
-            toolStripMenuItem3.Name = "toolStripMenuItem3";
-            toolStripMenuItem3.Size = new Size(196, 6);
-            // 
-            // vendaToolStripMenuItem
-            // 
-            vendaToolStripMenuItem.Name = "vendaToolStripMenuItem";
-            vendaToolStripMenuItem.Size = new Size(199, 22);
-            vendaToolStripMenuItem.Text = "&CID";
-            // 
-            // toolStripMenuItem5
-            // 
-            toolStripMenuItem5.Name = "toolStripMenuItem5";
-            toolStripMenuItem5.Size = new Size(199, 22);
-            toolStripMenuItem5.Text = "&Categoria Especialidade";
-            // 
-            // categoriaEspecialidadeToolStripMenuItem
-            // 
-            categoriaEspecialidadeToolStripMenuItem.Name = "categoriaEspecialidadeToolStripMenuItem";
-            categoriaEspecialidadeToolStripMenuItem.Size = new Size(199, 22);
-            categoriaEspecialidadeToolStripMenuItem.Text = "&Categoria Consulta";
+            clientesToolStripMenuItem.Click += clientesToolStripMenuItem_Click_1;
             // 
             // relatóriosToolStripMenuItem
             // 
             relatóriosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { usuáriosToolStripMenuItem1, procedimentoToolStripMenuItem });
             relatóriosToolStripMenuItem.Name = "relatóriosToolStripMenuItem";
-            relatóriosToolStripMenuItem.Size = new Size(62, 20);
-            relatóriosToolStripMenuItem.Text = "&Registro";
+            relatóriosToolStripMenuItem.Size = new Size(95, 20);
+            relatóriosToolStripMenuItem.Text = "&Agendamento";
             // 
             // usuáriosToolStripMenuItem1
             // 
             usuáriosToolStripMenuItem1.Name = "usuáriosToolStripMenuItem1";
-            usuáriosToolStripMenuItem1.Size = new Size(149, 22);
+            usuáriosToolStripMenuItem1.Size = new Size(180, 22);
             usuáriosToolStripMenuItem1.Text = "&Consulta";
+            usuáriosToolStripMenuItem1.Click += usuáriosToolStripMenuItem1_Click;
             // 
             // procedimentoToolStripMenuItem
             // 
             procedimentoToolStripMenuItem.Name = "procedimentoToolStripMenuItem";
-            procedimentoToolStripMenuItem.Size = new Size(149, 22);
+            procedimentoToolStripMenuItem.Size = new Size(180, 22);
             procedimentoToolStripMenuItem.Text = "&Procedimento";
             // 
             // relatorioToolStripMenuItem
@@ -207,7 +170,6 @@
             sairToolStripMenuItem.Name = "sairToolStripMenuItem";
             sairToolStripMenuItem.Size = new Size(38, 20);
             sairToolStripMenuItem.Text = "&Sair";
-            sairToolStripMenuItem.Click += sairToolStripMenuItem_Click;
             // 
             // statusStrip1
             // 
@@ -254,12 +216,8 @@
         private ToolStripMenuItem usuáriosToolStripMenuItem;
         private ToolStripSeparator toolStripMenuItem1;
         private ToolStripMenuItem grupoDeProdutosToolStripMenuItem;
-        private ToolStripMenuItem produtosToolStripMenuItem;
         private ToolStripSeparator toolStripMenuItem2;
-        private ToolStripMenuItem cidadesToolStripMenuItem;
         private ToolStripMenuItem clientesToolStripMenuItem;
-        private ToolStripMenuItem vendaToolStripMenuItem;
-        private ToolStripSeparator toolStripMenuItem3;
         private ToolStripMenuItem relatóriosToolStripMenuItem;
         private StatusStrip statusStrip1;
         private ToolStripStatusLabel lblUsuario;
@@ -268,8 +226,6 @@
         private ToolStripMenuItem sairToolStripMenuItem;
         private ToolStripMenuItem usuáriosToolStripMenuItem1;
         private ToolStripMenuItem toolStripMenuItem4;
-        private ToolStripMenuItem toolStripMenuItem5;
-        private ToolStripMenuItem categoriaEspecialidadeToolStripMenuItem;
         private ToolStripMenuItem procedimentoToolStripMenuItem;
         private ToolStripMenuItem relatorioToolStripMenuItem;
         private ToolStripMenuItem fAAToolStripMenuItem;

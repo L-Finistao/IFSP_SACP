@@ -62,6 +62,7 @@
             materialTabControl.SelectedIndex = 0;
             materialTabControl.Size = new Size(548, 451);
             materialTabControl.TabIndex = 1;
+            materialTabControl.Enter += tabPageConsulta_Enter;
             // 
             // tabPageCadastro
             // 
@@ -69,7 +70,7 @@
             tabPageCadastro.ImageKey = "form.png";
             tabPageCadastro.Location = new Point(4, 31);
             tabPageCadastro.Name = "tabPageCadastro";
-            tabPageCadastro.Padding = new Padding(3, 3, 3, 3);
+            tabPageCadastro.Padding = new Padding(3);
             tabPageCadastro.Size = new Size(540, 416);
             tabPageCadastro.TabIndex = 0;
             tabPageCadastro.Text = "Cadastro";
@@ -138,8 +139,8 @@
             tabPageConsulta.ImageKey = "search.png";
             tabPageConsulta.Location = new Point(4, 31);
             tabPageConsulta.Name = "tabPageConsulta";
-            tabPageConsulta.Padding = new Padding(3, 3, 3, 3);
-            tabPageConsulta.Size = new Size(541, 417);
+            tabPageConsulta.Padding = new Padding(3);
+            tabPageConsulta.Size = new Size(540, 416);
             tabPageConsulta.TabIndex = 1;
             tabPageConsulta.Text = "Consulta";
             tabPageConsulta.UseVisualStyleBackColor = true;
@@ -160,7 +161,7 @@
             dataGridViewConsulta.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridViewConsulta.Size = new Size(527, 356);
             dataGridViewConsulta.TabIndex = 4;
-            dataGridViewConsulta.CellDoubleClick += dataGridViewConsulta_CellDoubleClick;
+            dataGridViewConsulta.CellContentDoubleClick += VirtualSelectCell;
             // 
             // btnExcluir
             // 

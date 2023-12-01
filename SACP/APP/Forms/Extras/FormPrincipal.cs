@@ -1,8 +1,10 @@
+
+using APP.Base.Registro;
+using APP.Forms.Cadastro;
 using APP.infra;
 using Domain.Entities;
 using Microsoft.Extensions.DependencyInjection;
 using ReaLTaiizor.Forms;
-using SACP.APP.Cadastros;
 using System.Security.Policy;
 
 namespace IFSPStore.App
@@ -10,7 +12,6 @@ namespace IFSPStore.App
     public partial class FormPrincipal : MaterialForm
     {
 
-        public static Usuario Usuario { get; set; }
         public FormPrincipal()
         {
             InitializeComponent();
@@ -43,7 +44,7 @@ namespace IFSPStore.App
 
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Exibeformulario<Cadastro_Procedimento>();
+
         }
 
         private void Exibeformulario<TFormlario>() where TFormlario : Form
@@ -54,6 +55,37 @@ namespace IFSPStore.App
                 cad.MdiParent = this;
                 cad.Show();
             }
+        }
+
+        private void vendaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+            Exibeformulario<Cad_Usuario>();
+        }
+
+        private void usuáriosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Exibeformulario<Cad_Medicos>();
+
+        }
+
+        private void clientesToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            Exibeformulario<Cad_Procedimento>();
+        }
+
+        private void grupoDeProdutosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Exibeformulario<Cad_Agenda>();
+        }
+
+        private void usuáriosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Exibeformulario<Agenda_registra>();
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿using Domain.Entities;
+﻿    using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Repository.Mapping;
 using System;
@@ -18,29 +18,22 @@ namespace Repository.Context
             ChangeTracker.LazyLoadingEnabled = false;
         }
 
-        public DbSet<Usuario>? Usuarios { get; set; }
-        public DbSet<Usuario_Medico>? usuario_Medicos { get; set; }
-        public DbSet<Cid>? CIDs { get; set; }
-        public DbSet<CategoriaEspecialidade>? Categoria_Especialidades { get; set; }
-        public DbSet<CategoriaConsulta>? Categoria_Consultas { get; set; }
-        public DbSet<Medico_Especialidades>? medico_Especialidades { get; set; }
-        public DbSet<Procedimento>? procedimentos { get; set; }
-        public DbSet<Agenda>? Agendas { get; set; }
-        public DbSet<Consulta>? Consultas { get; set; }
+        public DbSet<Entity_Agenda>? Agenda{ get; set; }
+        public DbSet<Entity_Consulta>? Consulta { get; set; }
+        public DbSet<Entity_Procedimento>? Procedimento{ get; set; }
+        public DbSet<Entity_Usuario>? Paciente{ get; set; }
+        public DbSet<Entity_Usuario_Medico>? Medico{ get; set; }
+      
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<Usuario>(new UsuarioMap().Configure);
-            modelBuilder.Entity<Usuario_Medico>(new UsuarioMedicoMap().Configure);
-            modelBuilder.Entity<Cid>(new CidMap().Configure);
-            modelBuilder.Entity<CategoriaEspecialidade>(new Categoria_EspecialidadeMap().Configure);
-            modelBuilder.Entity<CategoriaConsulta>(new Categoria_ConsultaMap().Configure);
-            modelBuilder.Entity<Medico_Especialidades>(new Medico_EspecialidadesMap().Configure);
-            modelBuilder.Entity<Procedimento>(new ProcedimentoMap().Configure);
-            modelBuilder.Entity<Agenda>(new AgendaMap().Configure);
-            modelBuilder.Entity<Consulta>(new ConsultaMap().Configure);
+            modelBuilder.Entity<Entity_Usuario>(new Entity_MapUsuario().Configure);
+            modelBuilder.Entity<Entity_Usuario_Medico>(new Entity_MapUsuarioMedico().Configure);
+            modelBuilder.Entity<Entity_Procedimento>(new Entity_MapProcedimento().Configure);
+            modelBuilder.Entity<Entity_Agenda>(new Entity_MapAgenda().Configure);
+            modelBuilder.Entity<Entity_Consulta>(new Entity_MapConsulta().Configure);
         }
     }
 }

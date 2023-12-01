@@ -4,28 +4,19 @@
     <Compile Update="Base\Cadastro\CadastroBase.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Forms\Cadastro\Cadastro_Agenda.cs">
+    <Compile Update="Base\Registro\Agenda_registra.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Forms\Cadastro\Cadastro_Cat_Consulta.cs">
+    <Compile Update="Forms\Cadastro\Cad_Agenda.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Forms\Cadastro\Cadastro_CID.cs">
+    <Compile Update="Forms\Cadastro\Cad_Medicos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Forms\Cadastro\Cadastro_Medico.cs">
+    <Compile Update="Forms\Cadastro\Cad_Procedimento.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Forms\Cadastro\Cadastro_Procedimento.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Forms\Cadastro\Catastro_Cat_Especialidade.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Forms\Cadastro\Especialidade.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Forms\Cadastro\UsuarioForm.cs">
+    <Compile Update="Forms\Cadastro\Cad_Usuario.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Forms\Extras\FormPrincipal.cs">

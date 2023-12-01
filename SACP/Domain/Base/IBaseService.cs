@@ -25,5 +25,6 @@ namespace Domain.Base
             where TValidator : AbstractValidator<TEntity>
             where TInputModel : class
             where TOutputModel : class;
+        object Get<T>(Func<object, object> includes);
     }
 }
