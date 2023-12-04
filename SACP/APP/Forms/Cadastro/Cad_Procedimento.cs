@@ -12,7 +12,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Microsoft.EntityFrameworkCore; 
+using Microsoft.EntityFrameworkCore;
+using AutoMapper;
+
 namespace APP.Forms.Cadastro
 {
     public partial class Cad_Procedimento : CadastroBase
@@ -113,22 +115,21 @@ namespace APP.Forms.Cadastro
             }
         }
 
+
         protected override void CarregaGrid()
         {
-
-            procedimentos = _ProcedimentoService.Get<Entity_ModelsProcedimento>().ToList();
-            dataGridViewConsulta.DataSource = procedimentos;
-            dataGridViewConsulta.Columns["Cid"]!.Visible = false;
-
+            var Agedaa = _ProcedimentoService.Get<Entity_ModelsProcedimento>().ToList();
+            dataGridViewConsulta.DataSource = Agedaa;
+            dataGridViewConsulta.Columns["Id"]!.Visible = false;
         }
+
+
 
         protected override void CarregaRegistro(DataGridViewRow? linha)
         {
 
             TXT_ID.Text = linha?.Cells["Id"].Value.ToString();
             Desc_TEXT.Text = linha?.Cells["Descricao"].Value.ToString();
-            Comb_Medico.SelectedValue = linha?.Cells["Id_MedicoId"].Value;
-            Comb_Paciente.SelectedValue = linha?.Cells["Id_PacienteId"].Value;
             Comb_Cid.SelectedValue = linha?.Cells["Cid"].Value;
           
             if (DateTime.TryParse(linha?.Cells["Data_Agendado"].Value.ToString(), out var data))

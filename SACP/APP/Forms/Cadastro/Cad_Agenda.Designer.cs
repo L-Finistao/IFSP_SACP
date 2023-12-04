@@ -143,7 +143,6 @@
         #endregion
 
         private ReaLTaiizor.Controls.MaterialLabel ID_TXT;
-        private ReaLTaiizor.Controls.MaterialTextBoxEdit materialTextBoxEdit1;
         private ReaLTaiizor.Controls.PoisonDateTime poisonDateTime1;
         private ReaLTaiizor.Controls.MaterialComboBox Combo_Prof;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit Txt_vagas;

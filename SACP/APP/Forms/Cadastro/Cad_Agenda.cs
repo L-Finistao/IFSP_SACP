@@ -95,9 +95,9 @@ namespace APP.Forms.Cadastro
 
         protected override void CarregaGrid()
         {
-            Agendas = _agendaService.Get<Entity_ModelsAgenda>().ToList();
-            dataGridViewConsulta.DataSource = Agendas;
-            dataGridViewConsulta.Columns["Nome_Medico"]!.Visible = false;
+            var Agedaa = _agendaService.Get<Entity_ModelsAgenda>().ToList();
+            dataGridViewConsulta.DataSource = Agedaa;
+            dataGridViewConsulta.Columns["Id"]!.Visible = false;
         }
 
         protected override void CarregaRegistro(DataGridViewRow? linha)
@@ -111,23 +111,7 @@ namespace APP.Forms.Cadastro
 
         }
 
-        protected override void VirtualSelectCell(object sender, DataGridViewCellEventArgs e)
-        {
-            if (dataGridViewConsulta.SelectedRows.Count > 0)
-            {
-                if (MessageBox.Show(@"Deseja realmente cancelar?", @"IFSP Store", MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Question)
-                == DialogResult.Yes)
-                {
 
-                }
-            }
-            else
-            {
-                MessageBox.Show("Selecione Algum Aluno", "IFSP", MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning);
-            }
-        }
 
 
 

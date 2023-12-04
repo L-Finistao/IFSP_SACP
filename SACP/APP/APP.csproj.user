@@ -4,9 +4,6 @@
     <Compile Update="Base\Cadastro\CadastroBase.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Base\Registro\Agenda_registra.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="Forms\Cadastro\Cad_Agenda.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -20,6 +17,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Forms\Extras\FormPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Registro\Consulta.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

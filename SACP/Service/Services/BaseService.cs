@@ -5,6 +5,7 @@ using FluentValidation;
 
 namespace Service.Services
 {
+
     public class BaseService<TEntity> : IBaseService<TEntity> where TEntity : IBaseEntity
     {
         private readonly IBaseRepository<TEntity> _baseRepository;
@@ -45,11 +46,7 @@ namespace Service.Services
 
         public IEnumerable<TOutputModel> Get<TOutputModel>(IList<string>? includes = null) where TOutputModel : class
         {
-            var entities = _baseRepository.Select(includes);
-
-            var outputModels = entities.Select(s => _mapper.Map<TOutputModel>(s));
-
-            return outputModels;
+            return _baseRepository.Select(includes).Select(s => _mapper.Map<TOutputModel>(s));
         }
 
         public TOutputModel GetById<TOutputModel>(int id, IList<string>? includes = null) where TOutputModel : class
@@ -91,9 +88,6 @@ namespace Service.Services
             validator.ValidateAndThrow(obj);
         }
 
-        public object Get<T>(Func<object, object> includes)
-        {
-            throw new NotImplementedException();
-        }
+
     }
 }

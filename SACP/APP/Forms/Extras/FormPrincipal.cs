@@ -85,7 +85,7 @@ namespace IFSPStore.App
 
         private void usuáriosToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Exibeformulario<Agenda_registra>();
+          //  Exibeformulario<Agenda_registra>();
         }
     }
 }

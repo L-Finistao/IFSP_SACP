@@ -161,7 +161,7 @@
             dataGridViewConsulta.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridViewConsulta.Size = new Size(527, 356);
             dataGridViewConsulta.TabIndex = 4;
-            dataGridViewConsulta.CellContentDoubleClick += VirtualSelectCell;
+            dataGridViewConsulta.CellContentDoubleClick += dataGridViewConsulta_CellDoubleClick;
             // 
             // btnExcluir
             // 

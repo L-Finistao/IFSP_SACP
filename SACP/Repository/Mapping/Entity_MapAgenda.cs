@@ -21,6 +21,7 @@ namespace Repository.Mapping
             builder.HasOne(prop => prop.IdMedico);
             builder.Property(prop => prop.DataAgenda);
             builder.Property(prop => prop.Vagas);
+            builder.Property(prop => prop.Vaga_Agendados).HasDefaultValue(0);
 
         }
     }

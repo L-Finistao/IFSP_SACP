@@ -80,7 +80,7 @@ namespace APP.Forms.Cadastro
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, @"Store", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, @"SACP", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -88,7 +88,7 @@ namespace APP.Forms.Cadastro
         {
             _usuarioList = _usuarioService.Get<Entity_ModelsUsuarioMedico>().ToList();
             dataGridViewConsulta.DataSource = _usuarioList;
-            dataGridViewConsulta.Columns["Nome"]!.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewConsulta.Columns["Id"]!.Visible = true;
         }
 
         protected override void CarregaRegistro(DataGridViewRow? linha)

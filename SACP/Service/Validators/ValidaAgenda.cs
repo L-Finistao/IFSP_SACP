@@ -21,6 +21,8 @@ namespace Service.Validators
             RuleFor(c => c.Vagas)
                      .NotEmpty().WithMessage("Por favor informe a Quantidade de Vagas.")
                    .NotNull().WithMessage("Por favor informe a Quantidade de Vagas.");
+            RuleFor(c => c.Vaga_Agendados)
+                   .NotEqual(c => c.Vagas).WithMessage("Numero Maximo de Pessoas Atingidas");
         }
     }
 }

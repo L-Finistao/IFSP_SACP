@@ -9,7 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Repository.Context;
 using Repository.Repository;
 using Service.Services;
-
+using Microsoft.Extensions.Logging;
 namespace APP.infra
 {
     public static class ConfigureDI
@@ -21,20 +21,22 @@ namespace APP.infra
         public static void ConfiguraServices()
         {
             Services = new ServiceCollection();
+            var strCon = File.ReadAllText("Config/DatabaseSettings.txt");
             Services.AddDbContext<MySqlContext>(options =>
             {
-                var strCon = File.ReadAllText("Config/DatabaseSettings.txt");
-                options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
-                options.EnableSensitiveDataLogging();
+                options.LogTo(Console.WriteLine)
+                    .EnableSensitiveDataLogging();
+                //options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
+                //options.EnableSensitiveDataLogging();
 
 
                 options.UseMySql(strCon, ServerVersion.AutoDetect(strCon), opt =>
                 {
                     opt.CommandTimeout(180);
                     opt.EnableRetryOnFailure(5);
-
                 });
             });
+
 
             // Repositories
             Services.AddScoped<IBaseRepository<Entity_Usuario>, BaseRepository<Entity_Usuario>>();
@@ -57,7 +59,6 @@ namespace APP.infra
             Services.AddTransient<Cad_Medicos, Cad_Medicos>();
             Services.AddTransient<Cad_Procedimento, Cad_Procedimento>();
             Services.AddTransient<Cad_Agenda, Cad_Agenda>();
-            Services.AddTransient<Agenda_registra, Agenda_registra>();
 
             
 
@@ -70,19 +71,14 @@ namespace APP.infra
                 config.CreateMap<Entity_Usuario, Entity_ModelsUsuario>();
                 config.CreateMap<Entity_Usuario_Medico, Entity_ModelsUsuarioMedico>();
                 config.CreateMap<Entity_Procedimento, Entity_ModelsProcedimento>()
-                 .ForMember(d => d.Nome_Medico, d => d.MapFrom(x => x.Id_Medico!.Nome))
-                 .ForMember(d => d.Especialidade_Medico, d => d.MapFrom(x => x.Id_Medico!.Especialidade))
-                 .ForMember(d => d.Nome_Paciente, d => d.MapFrom(x => x.Id_Paciente!.Nome))
-                 .ForMember(d => d.Vinculo_Paciente, d => d.MapFrom(x => x.Id_Paciente.Vinculo));
+                   .ForMember(d => d.Nome_Medico, d => d.MapFrom(x => x.Id_Medico.Nome))
+                   .ForMember(d => d.Especialidade_Medico, d => d.MapFrom(x => x.Id_Medico.Especialidade))
+                   .ForMember(d => d.Nome_Paciente, d => d.MapFrom(x => x.Id_Paciente.Nome))
+                   .ForMember(d => d.Vinculo_Paciente, d => d.MapFrom(x => x.Id_Paciente.Vinculo));
                 config.CreateMap<Entity_Agenda, Entity_ModelsAgenda>()
-                 .ForMember(d => d.Nome_Medico, d => d.MapFrom(x => x.IdMedico!.Nome))
-                 .ForMember(d => d.Especialidade_Medico, d => d.MapFrom(x => x.IdMedico!.Especialidade));
-                config.CreateMap<Entity_Consulta, Entity_ModelsConsulta>()
-                 .ForMember(d => d.Nome_Medico, d => d.MapFrom(x => x.Agenda.IdMedico!.Nome))
-                 .ForMember(d => d.Especialidade_Medico, d => d.MapFrom(x => x.Agenda!.IdMedico!.Especialidade))
-                  .ForMember(d => d.Nome, d => d.MapFrom(x => x.Paciente!.Nome))
-                 .ForMember(d => d.Vinculo, d => d.MapFrom(x => x.Paciente!.Vinculo))
-                 .ForMember(d => d.Vagas, d => d.MapFrom(x => x.Agenda!.Vagas));
+                   .ForMember(d => d.Nome_Medico, d => d.MapFrom(x => x.IdMedico.Nome))
+                   .ForMember(d => d.Especialidade_Medico, d => d.MapFrom(x => x.IdMedico.Especialidade));
+                config.CreateMap<Entity_Consulta, Entity_ModelsConsulta>();
 
 
 

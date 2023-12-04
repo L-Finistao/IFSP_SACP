@@ -17,11 +17,12 @@ namespace Domain.Entities
 
         }
 
-
+        
         public Entity_Usuario_Medico? IdMedico { get; set; }
         public DateTime? DataAgenda { get; set; }
 
         public int? Vagas { get; set; }
+        public int? Vaga_Agendados { get; set; }
 
     }
 }

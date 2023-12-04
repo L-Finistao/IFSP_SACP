@@ -47,3 +47,5 @@ C:\Users\lukas\OneDrive\Arquivos\Documentos\GitHub\IFSP_SACP\SACP\APP\obj\Releas
 C:\Users\lukas\OneDrive\Arquivos\Documentos\GitHub\IFSP_SACP\SACP\APP\obj\Release\net7.0-windows\APP.pdb
 C:\Users\lukas\OneDrive\Arquivos\Documentos\GitHub\IFSP_SACP\SACP\APP\obj\Release\net7.0-windows\APP.genruntimeconfig.cache
 C:\Users\lukas\OneDrive\Arquivos\Documentos\GitHub\IFSP_SACP\SACP\APP\obj\Release\net7.0-windows\ref\APP.dll
+C:\Users\lukas\OneDrive\Arquivos\Documentos\GitHub\IFSP_SACP\SACP\APP\obj\Release\net7.0-windows\APP.Base.Registro.Agenda_registra.resources
+C:\Users\lukas\OneDrive\Arquivos\Documentos\GitHub\IFSP_SACP\SACP\APP\obj\Release\net7.0-windows\APP.Forms.Componentes.AgendaComponent.resources

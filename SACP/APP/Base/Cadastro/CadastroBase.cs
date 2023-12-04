@@ -137,11 +137,6 @@ namespace APP.Base.Cadastro
 
         }
 
-        protected virtual void VirtualSelectCell(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         #endregion
 
 
