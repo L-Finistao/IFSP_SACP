@@ -3,15 +3,28 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34309.116
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{1E59F728-7F9B-43ED-8506-F66B0FB8BE06}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{1E59F728-7F9B-43ED-8506-F66B0FB8BE06}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository", "Repository\Repository.csproj", "{A49C5233-8913-4C87-ACD9-73C28D088DDF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repository", "Repository\Repository.csproj", "{A49C5233-8913-4C87-ACD9-73C28D088DDF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service", "Service\Service.csproj", "{435B5DED-D416-4CD4-8126-FC52E9D500EB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service", "Service\Service.csproj", "{435B5DED-D416-4CD4-8126-FC52E9D500EB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DDD", "DDD", "{8FB8B48A-CF11-4B3E-91B9-B6FABE5B0C04}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APP", "APP\APP.csproj", "{F49DDDC3-8C87-4C6E-B300-83B90ED50537}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "APP", "APP\APP.csproj", "{F49DDDC3-8C87-4C6E-B300-83B90ED50537}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SACPTeste", "SACPTeste\SACPTeste.csproj", "{AE1DB9CA-00C2-4EB6-994B-ED86E4EB5B52}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1E59F728-7F9B-43ED-8506-F66B0FB8BE06} = {1E59F728-7F9B-43ED-8506-F66B0FB8BE06}
+		{435B5DED-D416-4CD4-8126-FC52E9D500EB} = {435B5DED-D416-4CD4-8126-FC52E9D500EB}
+		{A49C5233-8913-4C87-ACD9-73C28D088DDF} = {A49C5233-8913-4C87-ACD9-73C28D088DDF}
+		{F49DDDC3-8C87-4C6E-B300-83B90ED50537} = {F49DDDC3-8C87-4C6E-B300-83B90ED50537}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Itens de Solução", "Itens de Solução", "{F6D3ADEA-D543-440E-B9B1-91210578E928}"
+	ProjectSection(SolutionItems) = preProject
+		Insert.txt = Insert.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,6 +48,10 @@ Global
 		{F49DDDC3-8C87-4C6E-B300-83B90ED50537}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F49DDDC3-8C87-4C6E-B300-83B90ED50537}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F49DDDC3-8C87-4C6E-B300-83B90ED50537}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE1DB9CA-00C2-4EB6-994B-ED86E4EB5B52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE1DB9CA-00C2-4EB6-994B-ED86E4EB5B52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE1DB9CA-00C2-4EB6-994B-ED86E4EB5B52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE1DB9CA-00C2-4EB6-994B-ED86E4EB5B52}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

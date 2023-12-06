@@ -28,5 +28,7 @@ namespace Domain.Entities
         public string? Telefone_01 { get; set; }
         public string? Telefone_02 { get; set; }
         public string? Vinculo { get; set; }
+
+ 
     }
 }

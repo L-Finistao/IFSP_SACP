@@ -59,7 +59,7 @@
             materialTabControl.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             materialTabControl.Multiline = true;
             materialTabControl.Name = "materialTabControl";
-            materialTabControl.SelectedIndex = 0;
+            materialTabControl.SelectedIndex = 2;
             materialTabControl.Size = new Size(548, 451);
             materialTabControl.TabIndex = 1;
             materialTabControl.Enter += tabPageConsulta_Enter;

@@ -71,9 +71,17 @@
               "target": "Package",
               "version": "[7.0.0, )"
             },
+            "MySql.Data": {
+              "target": "Package",
+              "version": "[8.2.0, )"
+            },
             "ReaLTaiizor": {
               "target": "Package",
               "version": "[3.7.9.7, )"
+            },
+            "Spire.PDF": {
+              "target": "Package",
+              "version": "[9.11.4, )"
             }
           },
           "imports": [

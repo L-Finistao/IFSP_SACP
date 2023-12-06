@@ -13,7 +13,10 @@ namespace APP.Models
 
         public string? Nome_Medico { get; set; }
         public string? Especialidade_Medico { get; set; }
+        public string? Nome { get; set; }
         public DateTime? DataAgenda { get; set; }
         public int? Vagas { get; set; }
+
+
     }
 }

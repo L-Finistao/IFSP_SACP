@@ -10,10 +10,13 @@ namespace Domain.Entities
     public class Entity_Agenda : BaseEntity<int>
     {
         public Entity_Agenda() { }
-        public Entity_Agenda(int id, Entity_Usuario_Medico usuario_Medico, DateTime data) {
+        public Entity_Agenda(int id, Entity_Usuario_Medico usuario_Medico, DateTime data, int? vagas, int? vagasag, string? nome) {
             IdMedico = usuario_Medico;
             Id = id;
             DataAgenda = data;
+            Vagas = vagas;
+            Vaga_Agendados = vagasag;
+            Nome = nome;
 
         }
 
@@ -23,6 +26,8 @@ namespace Domain.Entities
 
         public int? Vagas { get; set; }
         public int? Vaga_Agendados { get; set; }
+
+        public string? Nome { get; set; }
 
     }
 }

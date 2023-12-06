@@ -1,7 +1,9 @@
 ﻿using APP.Base.Cadastro;
+using APP.infra;
 using APP.Models;
 using Domain.Base;
 using Domain.Entities;
+using Microsoft.Extensions.DependencyInjection;
 using Service.Validators;
 using System;
 using System.Collections.Generic;
@@ -43,12 +45,13 @@ namespace APP.Forms.Cadastro
         {
             agenda.Vagas = int.Parse(Txt_vagas.Text);
             agenda.DataAgenda = poisonDateTime1.Value;
+            
 
             if (int.TryParse(Combo_Prof.SelectedValue.ToString(), out var idGrupo))
             {
                 var grupo = _usuariomedicoService.GetById<Entity_Usuario_Medico>(idGrupo);
                 agenda.IdMedico = grupo;
-
+                agenda.Nome = grupo.Nome + " " + grupo.Especialidade;
                 _usuariomedicoService.AttachObject(grupo);
             }
         }
@@ -100,6 +103,10 @@ namespace APP.Forms.Cadastro
             dataGridViewConsulta.Columns["Id"]!.Visible = false;
         }
 
+        protected override void AltEdit()
+        {
+            Exibeformulario<Cad_Consulta>();
+        }
         protected override void CarregaRegistro(DataGridViewRow? linha)
         {
             ID_TXT.Text = linha?.Cells["Id"].Value.ToString();
@@ -111,8 +118,14 @@ namespace APP.Forms.Cadastro
 
         }
 
-
-
+        private void Exibeformulario<TFormlario>() where TFormlario : Form
+        {
+            TFormlario? cad = ConfigureDI.ServicesProvider!.GetService<TFormlario>();
+            if (cad != null && !cad.IsDisposed)
+            {
+                cad.Show();
+            }
+        }
 
 
     }

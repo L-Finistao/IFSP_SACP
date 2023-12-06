@@ -1,0 +1,142 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Tempo de geração: 06/12/2023 às 19:30
+-- Versão do servidor: 10.4.28-MariaDB
+-- Versão do PHP: 8.0.28
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Banco de dados: `ifspsacp`
+--
+
+--
+-- Despejando dados para a tabela `agenda`
+--
+
+INSERT INTO `agenda` (`Id`, `IdMedicoId`, `DataAgenda`, `Vagas`, `Vaga_Agendados`, `Nome`) VALUES
+(1, 1, '2023-12-28 10:29:00.776000', 25, 0, 'Mr Jose Antonio Silva Medicina Perioperatória'),
+(2, 2, '2023-12-28 10:29:00.776000', 65, 0, 'Dr. Renata Bozani Medicina do Trabalho'),
+(3, 9, '2023-12-18 15:23:21.985000', 22, 0, 'Dr. Paulo Rocha Cardiologia'),
+(4, 8, '2023-12-18 15:23:21.985000', 20, 0, 'Dra. Fernanda Santos Oftalmologia Geral'),
+(5, 7, '2023-12-18 15:23:21.985000', 12, 0, 'Dr. José Lima Dermatologia'),
+(6, 6, '2023-12-22 15:23:21.985000', 22, 0, 'Dra. Ana Pereira Ginecologia'),
+(7, 5, '2023-12-22 15:23:21.985000', 125, 0, 'Dr. Carlos Oliveira Ortopedia'),
+(8, 4, '2023-12-22 15:23:21.985000', 22, 0, 'Dra. Juliana Silva Pediatria'),
+(9, 1, '2023-12-22 15:23:21.985000', 25, 0, 'Mr Jose Antonio Silva Medicina Perioperatória'),
+(10, 2, '2023-12-22 15:23:21.985000', 200, 0, 'Dr. Renata Bozani Medicina do Trabalho');
+
+--
+-- Despejando dados para a tabela `consulta`
+--
+
+INSERT INTO `consulta` (`Id`, `Ativa`, `Realizada`, `AgendaId`, `PacienteId`) VALUES
+(1, 1, 1, 1, 1),
+(2, 1, 1, 1, 1),
+(3, 1, 1, 1, 1),
+(4, 1, 0, 1, 1),
+(5, 1, 1, 1, 2),
+(6, 1, 0, 1, 16),
+(7, 1, 0, 3, 4),
+(38, 1, 0, 7, 6),
+(39, 1, 0, 3, 11),
+(40, 1, 0, 9, 16),
+(41, 1, 0, 2, 14),
+(42, 1, 0, 5, 6),
+(43, 1, 0, 5, 9),
+(44, 1, 0, 7, 9),
+(45, 1, 0, 5, 12),
+(46, 1, 0, 2, 8),
+(47, 1, 0, 6, 9),
+(48, 1, 0, 8, 16),
+(49, 1, 0, 4, 1),
+(50, 1, 0, 5, 16),
+(51, 1, 0, 1, 13),
+(52, 1, 0, 3, 16);
+
+--
+-- Despejando dados para a tabela `medico`
+--
+
+INSERT INTO `medico` (`Id`, `Nome`, `Endereco`, `Codigo`, `Especialidade`, `Dt_Nasci`, `Telefone_01`, `Telefone_02`, `Vinculo`) VALUES
+(1, 'Mr Jose Antonio Silva', 'sadsad', 'COD994', 'Medicina Perioperatória', '2023-12-05 00:00:00.000000', '29999', '11212', 'CIMED'),
+(2, 'Dr. Renata Bozani', 'asd', 'CASS', 'Medicina do Trabalho', '2023-09-14 00:00:00.000000', '585684', '4564564', 'SUS'),
+(3, 'Dr. Roberto Almeida', 'Rua dos Médicos, 123, Saúdeville, EstadoX', 'MD001', 'Cardiologia', '1975-04-15 00:00:00.000000', '(11) 9876-5432', '(11) 8765-4321', 'Conveniado'),
+(4, 'Dra. Juliana Silva', 'Avenida da Saúde, 456, Bem-Estar City, EstadoY', 'MD002', 'Pediatria', '1982-08-20 00:00:00.000000', '(21) 8765-4321', '(21) 7654-3210', 'Particular'),
+(5, 'Dr. Carlos Oliveira', 'Travessa dos Especialistas, 789, Expertville, EstadoZ', 'MD003', 'Ortopedia', '1970-12-03 00:00:00.000000', '(31) 7654-3210', '(31) 6543-2109', 'Conveniado'),
+(6, 'Dra. Ana Pereira', 'Rua dos Especialistas, 101, Saúdelândia, EstadoW', 'MD004', 'Ginecologia', '1988-02-28 00:00:00.000000', '(41) 6543-2109', '(41) 5432-1098', 'Particular'),
+(7, 'Dr. José Lima', 'Alameda dos Médicos, 202, Bem-Estar Town, EstadoV', 'MD005', 'Dermatologia', '1972-06-10 00:00:00.000000', '(51) 5432-1098', '(51) 4321-0987', 'Conveniado'),
+(8, 'Dra. Fernanda Santos', 'Beco dos Especialistas, 303, Viva Bem Place, EstadoU', 'MD006', 'Oftalmologia Geral', '1985-10-17 00:00:00.000000', '(61) 4321-0987', '(61) 3210-9876', 'Particular'),
+(9, 'Dr. Paulo Rocha', 'Trilha do Bem-Estar, 404, Saúde da Família Village, EstadoT', 'MD007', 'Cardiologia', '1990-04-05 00:00:00.000000', '(71) 3210-9876', '(71) 2109-8765', 'Conveniado');
+
+--
+-- Despejando dados para a tabela `procedimento`
+--
+
+INSERT INTO `procedimento` (`Id`, `Cid`, `Descricao`, `Data_Agendado`, `Id_MedicoId`, `Id_PacienteId`) VALUES
+(1, 'CID123', 'Consulta de Rotina', '2023-12-01 00:00:00.000000', 1, 1),
+(3, 'CID789', 'Avaliação de Check-Up', '2023-12-03 00:00:00.000000', 3, 3),
+(4, 'CID234', 'Procedimento Estético Facial', '2023-12-04 00:00:00.000000', 4, 4),
+(5, 'CID567', 'Cirurgia de Emergência', '2023-12-05 00:00:00.000000', 5, 5),
+(6, 'CID890', 'Tratamento de Reabilitação', '2023-12-06 00:00:00.000000', 6, 6),
+(7, 'CID123', 'Avaliação de Especialista', '2023-12-07 00:00:00.000000', 7, 7),
+(8, 'CID456', 'Consulta de Emergência', '2023-12-08 00:00:00.000000', 1, 8),
+(9, 'CID789', 'Procedimento Odontológico', '2023-12-09 00:00:00.000000', 2, 9),
+(10, 'CID234', 'Exame Cardiológico', '2023-12-10 00:00:00.000000', 3, 10),
+(11, 'CID567', 'Cirurgia Ortopédica', '2023-12-12 00:00:00.000000', 4, 11),
+(12, 'CID890', 'Consulta Pediátrica', '2023-12-13 00:00:00.000000', 5, 12),
+(13, 'CID123', 'Avaliação Psicológica', '2023-12-14 00:00:00.000000', 6, 13),
+(14, 'CID456', 'Exame de Audiometria', '2023-12-15 00:00:00.000000', 7, 14),
+(15, 'CID789', 'Consulta Nutricional', '2023-12-16 00:00:00.000000', 1, 15),
+(16, 'CID234', 'Procedimento Dermatológico', '2023-12-17 00:00:00.000000', 2, 1),
+(18, 'CID890', 'Cirurgia Plástica', '2023-12-19 00:00:00.000000', 4, 3),
+(19, 'CID123', 'Tratamento Oncológico', '2023-12-20 00:00:00.000000', 5, 4),
+(20, 'CID456', 'Cirurgia Bariátrica', '2023-12-21 00:00:00.000000', 6, 5),
+(21, 'CID789', 'Consulta Ginecológica', '2023-12-22 00:00:00.000000', 7, 6),
+(22, 'CID234', 'Procedimento Urológico', '2023-12-23 00:00:00.000000', 1, 7),
+(23, 'CID567', 'Exame de Endoscopia', '2023-12-24 00:00:00.000000', 2, 8),
+(24, 'CID890', 'Cirurgia Vascular', '2023-12-25 00:00:00.000000', 3, 9),
+(25, 'CID123', 'Avaliação Ortopédica', '2023-12-26 00:00:00.000000', 4, 10),
+(26, 'CID456', 'Exame de Ultrassonografia', '2023-12-27 00:00:00.000000', 5, 11),
+(27, 'CID789', 'Consulta Cardiológica', '2023-12-28 00:00:00.000000', 6, 12),
+(28, 'CID234', 'Procedimento Neurocirúrgico', '2023-12-29 00:00:00.000000', 7, 13),
+(29, 'CID567', 'Cirurgia Otorrinolaringológica', '2023-12-30 00:00:00.000000', 1, 14),
+(30, 'CID890', 'Exame de Ressonância Magnética', '2023-12-31 00:00:00.000000', 2, 15);
+
+--
+-- Despejando dados para a tabela `usuario`
+--
+
+INSERT INTO `usuario` (`Id`, `Nome`, `Endereco`, `Dt_Nasci`, `Telefone_01`, `Telefone_02`, `Vinculo`) VALUES
+(1, 'Lucas Finistao ', 'sadsad', '2023-12-01 00:00:00.000000', '111', '1111', 'SUS'),
+(3, 'João Silva', 'Rua das Estrelas, 42, Celestial, EstadoX', '1990-05-15 00:00:00.000000', '(11) 9876-5432', '(11) 8765-4321', 'Sus'),
+(4, 'Maria Santos', 'Avenida da Alegria, 123, Sorrisolândia, EstadoY', '1985-08-20 00:00:00.000000', '(21) 8765-4321', '(21) 7654-3210', 'Particular'),
+(5, 'Carlos Oliveira', 'Travessa das Maravilhas, 789, Encantópolis, EstadoZ', '1978-12-03 00:00:00.000000', '(31) 7654-3210', '(31) 6543-2109', 'PlanosSaude'),
+(6, 'Ana Pereira', 'Rua do Arco-Íris, 101, Colorville, EstadoW', '1995-02-28 00:00:00.000000', '(41) 6543-2109', '(41) 5432-1098', 'Sus'),
+(7, 'José Lima', 'Alameda das Borboletas, 202, Florália, EstadoV', '1982-06-10 00:00:00.000000', '(51) 5432-1098', '(51) 4321-0987', 'Particular'),
+(8, 'Fernanda Santos', 'Beco das Fadas, 303, Encanto Mágico, EstadoU', '1975-10-17 00:00:00.000000', '(61) 4321-0987', '(61) 3210-9876', 'PlanosSaude'),
+(9, 'Paulo Rocha', 'Trilha da Lua Cheia, 404, Noite Estrelada, EstadoT', '1998-04-05 00:00:00.000000', '(71) 3210-9876', '(71) 2109-8765', 'Sus'),
+(10, 'Juliana Costa', 'Rua das Estrelas Cadentes, 505, Céu Noturno, EstadoS', '1980-09-22 00:00:00.000000', '(81) 2109-8765', '(81) 1098-7654', 'Particular'),
+(11, 'Eduardo Silva', 'Avenida dos Sonhos, 606, Imaginária, EstadoR', '1972-03-14 00:00:00.000000', '(91) 1098-7654', '(91) 0987-6543', 'PlanosSaude'),
+(12, 'Camila Santos', 'Caminho do Arco-Íris, 707, Encanto Matinal, EstadoQ', '1993-07-31 00:00:00.000000', '(01) 0987-6543', '(01) 9876-5432', 'Sus'),
+(13, 'Lucas Oliveira', 'Estrada da Felicidade, 808, Alegrolândia, EstadoP', '1987-01-25 00:00:00.000000', '(21) 9876-5432', '(21) 8765-4321', 'Particular'),
+(14, 'Mariana Lima', 'Praça da Serenidade, 909, Tranquilândia, EstadoO', '1970-05-08 00:00:00.000000', '(31) 8765-4321', '(31) 7654-3210', 'PlanosSaude'),
+(15, 'Roberto Rocha', 'Vila dos Sonhos, 1010, Sonholândia, EstadoN', '1996-09-12 00:00:00.000000', '(41) 7654-3210', '(41) 6543-2109', 'Sus'),
+(16, 'Vanessa Costa', 'Rua do Entusiasmo, 1111, Alegria Viva, EstadoM', '1984-02-03 00:00:00.000000', '(51) 6543-2109', '(51) 5432-1098', 'Particular'),
+(17, 'Marcos Oliveira', 'Caminho do Bem-Estar, 1212, Saúdelândia, EstadoL', '1977-06-18 00:00:00.000000', '(61) 5432-1098', '(61) 4321-0987', 'PlanosSaude');
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

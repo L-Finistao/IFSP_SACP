@@ -32,6 +32,7 @@ namespace APP.Base.Cadastro
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             Salvar();
+            LimpaCampos();
         }
 
         private void btnNovo_Click(object sender, EventArgs e)
@@ -71,9 +72,13 @@ namespace APP.Base.Cadastro
 
         private void dataGridViewConsulta_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            Editar();
+            AltEdit();
         }
 
+        protected virtual void AltEdit()
+        {
+            Editar();
+        }
         #endregion
 
         #region CRUD Methods
@@ -122,7 +127,7 @@ namespace APP.Base.Cadastro
             }
             else
             {
-                MessageBox.Show(@"Selecione algum registro!", @"IFSP Store", MessageBoxButtons.OK,
+                MessageBox.Show(@"Selecione algum registro!", @"SACP", MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
             }
         }

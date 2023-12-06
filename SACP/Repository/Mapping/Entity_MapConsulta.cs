@@ -18,8 +18,8 @@ namespace Repository.Mapping
             builder.HasKey(prop => prop.Id);
 
 
-            builder.Property(prop => prop.Ativa);
-            builder.Property(prop => prop.Realizada);
+            builder.Property(prop => prop.Ativa).HasDefaultValue(true);
+            builder.Property(prop => prop.Realizada).HasDefaultValue(false);
             builder.HasOne(prop => prop.Paciente);
             builder.HasOne(prop => prop.Agenda);
         }

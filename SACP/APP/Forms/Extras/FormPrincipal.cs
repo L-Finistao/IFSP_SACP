@@ -5,6 +5,7 @@ using APP.infra;
 using Domain.Entities;
 using Microsoft.Extensions.DependencyInjection;
 using ReaLTaiizor.Forms;
+using SGA;
 using System.Security.Policy;
 
 namespace IFSPStore.App
@@ -85,7 +86,26 @@ namespace IFSPStore.App
 
         private void usuáriosToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-          //  Exibeformulario<Agenda_registra>();
+            Exibeformulario<Cad_Consulta>();
+        }
+
+        private void fAAToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Exibeformulario<FormReport>();
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void lançarFaltasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void historicoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Exibeformulario<FormReportCurso>();
         }
     }
 }

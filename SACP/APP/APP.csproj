@@ -13,18 +13,32 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.14" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="7.0.14" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
+    <PackageReference Include="MySql.Data" Version="8.2.0" />
     <PackageReference Include="ReaLTaiizor" Version="3.7.9.7" />
+    <PackageReference Include="Spire.PDF" Version="9.11.4" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Base\Componentes\" />
-    <Folder Include="Base\Relatorios\" />
+    <Folder Include="Forms\Registro\" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Domain\Domain.csproj" />
     <ProjectReference Include="..\Repository\Repository.csproj" />
     <ProjectReference Include="..\Service\Service.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Base\Relatorios\BaseConsulta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Base\Relatorios\BaseConsulta.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
 
   <ItemGroup>
