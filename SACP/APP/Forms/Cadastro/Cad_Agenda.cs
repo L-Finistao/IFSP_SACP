@@ -4,6 +4,7 @@ using APP.Models;
 using Domain.Base;
 using Domain.Entities;
 using Microsoft.Extensions.DependencyInjection;
+using ReaLTaiizor.Extension;
 using Service.Validators;
 using System;
 using System.Collections.Generic;
@@ -44,14 +45,16 @@ namespace APP.Forms.Cadastro
         private void PreencheObjeto(Entity_Agenda agenda)
         {
             agenda.Vagas = int.Parse(Txt_vagas.Text);
-            agenda.DataAgenda = poisonDateTime1.Value;
+            agenda.DataAgenda = DateSelect.Value;
             
 
+                agenda.Periodo = Periodo.SelectedItem.ToString();
+         
             if (int.TryParse(Combo_Prof.SelectedValue.ToString(), out var idGrupo))
             {
                 var grupo = _usuariomedicoService.GetById<Entity_Usuario_Medico>(idGrupo);
                 agenda.IdMedico = grupo;
-                agenda.Nome = grupo.Nome + " " + grupo.Especialidade;
+                agenda.Nome = grupo.Nome + " | " + grupo.Especialidade + " | " + agenda.Periodo +" | " + agenda.DataAgenda.Value.ToString("dd-MM-yyyy");
                 _usuariomedicoService.AttachObject(grupo);
             }
         }
@@ -72,7 +75,14 @@ namespace APP.Forms.Cadastro
                 {
                     var produto = new Entity_Agenda();
                     PreencheObjeto(produto);
-                    _agendaService.Add<Entity_Agenda, Entity_Agenda, ValidaAgenda>(produto);
+                    if (IsValido(produto.DataAgenda, produto.IdMedico.Id, produto.Periodo))
+                    {
+                        _agendaService.Add<Entity_Agenda, Entity_Agenda, ValidaAgenda>(produto);
+                    } else
+                    {
+                        MessageBox.Show("Já Existe Uma Agenda Aberta Para esse Horario / Dia / Periodo", @"SACPS", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    }
 
                 }
 
@@ -105,16 +115,16 @@ namespace APP.Forms.Cadastro
 
         protected override void AltEdit()
         {
-            Exibeformulario<Cad_Consulta>();
+            Editar();
         }
         protected override void CarregaRegistro(DataGridViewRow? linha)
         {
+            //Periodo.SelectedValue = linha?.Cells["Periodo"].Value.ToString();
+//
             ID_TXT.Text = linha?.Cells["Id"].Value.ToString();
             Txt_vagas.Text = linha?.Cells["Vagas"].Value.ToString();
-            Combo_Prof.SelectedValue = linha?.Cells["IdMedicoId"].Value;
-            poisonDateTime1.Text = DateTime.TryParse(linha?.Cells["DataCompra"].Value.ToString(), out var dataC)
-               ? dataC.ToString("g")
-               : "";
+          //  Combo_Prof.SelectedValue = linha?.Cells["IdMedicoId"].Value;
+            
 
         }
 
@@ -126,6 +136,18 @@ namespace APP.Forms.Cadastro
                 cad.Show();
             }
         }
+
+
+        private bool IsValido(DateTime? dia, int IdMedico, String? Periodo)
+        {
+
+            var valid = true;
+            var agenda = _agendaService.Get<Entity_Agenda>().Where(a => a.Periodo == Periodo && a.DataAgenda == dia && a.IdMedico.Id == IdMedico).Count();
+            return agenda > 0 ? false : true;
+        }
+
+  
+
 
 
     }

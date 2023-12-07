@@ -90,5 +90,9 @@ namespace APP.Base.Registro
             }
         }
 
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

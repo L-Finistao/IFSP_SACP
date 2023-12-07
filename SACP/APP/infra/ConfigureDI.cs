@@ -11,6 +11,10 @@ using Repository.Repository;
 using Service.Services;
 using Microsoft.Extensions.Logging;
 using SGA;
+using App.Outros;
+using App.Models;
+using App.Cadastro;
+
 namespace APP.infra
 {
     public static class ConfigureDI
@@ -45,17 +49,20 @@ namespace APP.infra
             Services.AddScoped<IBaseRepository<Entity_Procedimento>, BaseRepository<Entity_Procedimento>>();
             Services.AddScoped<IBaseRepository<Entity_Agenda>, BaseRepository<Entity_Agenda>>();
             Services.AddScoped<IBaseRepository<Entity_Consulta>, BaseRepository<Entity_Consulta>>();
-
+            Services.AddScoped<IBaseRepository<Usuario>, BaseRepository<Usuario>>();
 
 
             // Services
+            Services.AddScoped<IBaseService<Usuario>, BaseService<Usuario>>();
             Services.AddScoped<IBaseService<Entity_Usuario>, BaseService<Entity_Usuario>>();
             Services.AddScoped<IBaseService<Entity_Usuario_Medico>, BaseService<Entity_Usuario_Medico>>();
             Services.AddScoped<IBaseService<Entity_Procedimento>, BaseService<Entity_Procedimento>>();
             Services.AddScoped<IBaseService<Entity_Agenda>, BaseService<Entity_Agenda>>();
             Services.AddScoped<IBaseService<Entity_Consulta>, BaseService<Entity_Consulta>>();
+           
 
             // Formulários
+
             Services.AddTransient<Cad_Usuario, Cad_Usuario>();
             Services.AddTransient<Cad_Medicos, Cad_Medicos>();
             Services.AddTransient<Cad_Procedimento, Cad_Procedimento>();
@@ -63,7 +70,8 @@ namespace APP.infra
             Services.AddTransient<Cad_Consulta, Cad_Consulta>();
             Services.AddTransient<FormReport, FormReport>();
             Services.AddTransient<FormReportCurso, FormReportCurso>();
-
+            Services.AddTransient<Login, Login>();
+            Services.AddTransient<CadastroUsuario, CadastroUsuario>();
 
 
 
@@ -72,6 +80,7 @@ namespace APP.infra
             // Mapping
             Services.AddSingleton(new MapperConfiguration(config =>
             {
+                config.CreateMap<Usuario, UsuarioModel>();
                 config.CreateMap<Entity_Usuario, Entity_ModelsUsuario>();
                 config.CreateMap<Entity_Usuario_Medico, Entity_ModelsUsuarioMedico>();
                 config.CreateMap<Entity_Procedimento, Entity_ModelsProcedimento>()
@@ -90,6 +99,7 @@ namespace APP.infra
                     .ForMember(d => d.Nome, d => d.MapFrom(x => x.Paciente.Nome)) 
                     .ForMember(d => d.IdPaciente, d => d.MapFrom(x => x.Paciente.Id)) 
                     .ForMember(d => d.Nome_Agenda, d => d.MapFrom(x => x.Agenda.Nome))
+                    .ForMember(d => d.Periodo_Consulta, d => d.MapFrom(x => x.Agenda.Periodo))
                     .ForMember(d => d.DataAgenda, d => d.MapFrom(x => x.Agenda.DataAgenda))
                     .ForMember(d => d.Vinculo, d => d.MapFrom(x => x.Paciente.Vinculo));
 

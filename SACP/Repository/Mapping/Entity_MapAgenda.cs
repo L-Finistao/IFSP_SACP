@@ -22,6 +22,8 @@ namespace Repository.Mapping
             builder.Property(prop => prop.DataAgenda);
             builder.Property(prop => prop.Vagas);
             builder.Property(prop => prop.Nome);
+            builder.Property(prop => prop.Periodo);
+            builder.HasKey(prop => prop.Id);
             builder.Property(prop => prop.Vaga_Agendados).HasDefaultValue(0);
 
         }

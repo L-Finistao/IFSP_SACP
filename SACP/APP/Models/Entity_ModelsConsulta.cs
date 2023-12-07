@@ -25,5 +25,8 @@ namespace APP.Models
 
         public string? Nome { get; set; }
         public string? Vinculo { get; set; }
+
+        public string? Periodo_Consulta { get; set; }
+
     }
 }

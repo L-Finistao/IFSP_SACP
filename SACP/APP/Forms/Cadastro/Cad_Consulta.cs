@@ -1,4 +1,5 @@
 ﻿using APP.Base.Cadastro;
+using MySql.Data.MySqlClient;
 using APP.Models;
 using Domain.Base;
 using Domain.Entities;
@@ -17,6 +18,11 @@ namespace APP.Forms.Cadastro
 {
     public partial class Cad_Consulta : CadastroBase
     {
+        string cs = @"server=localhost;" +
+          "uid=root;" +
+          "pws=;" +
+          "database=ifspsacp";
+
         private readonly IBaseService<Entity_Usuario> _usuarioService;
         private readonly IBaseService<Entity_Agenda> _agendaService;
         private readonly IBaseService<Entity_Consulta> _ConsultaService;
@@ -47,20 +53,32 @@ namespace APP.Forms.Cadastro
 
         private void PreencheObjeto(Entity_Consulta consult)
         {
-            consult.Realizada = CheckRealizado.Checked;
-            consult.Ativa = true;
-
             if (int.TryParse(CombAgenda.SelectedValue.ToString(), out var idpas))
             {
                 var Agendda = _agendaService.GetById<Entity_Agenda>(idpas);
                 consult.Agenda = Agendda;
             }
-
-
-            if (int.TryParse(CombPasci.SelectedValue.ToString(), out var sidpas))
+            try
             {
-                var Agendda = _usuarioService.GetById<Entity_Usuario>(sidpas);
-                consult.Paciente = Agendda;
+                if (IsVaga(consult.Agenda.Id))
+                {
+
+                    consult.Realizada = CheckRealizado.Checked;
+                    consult.Ativa = true;
+
+                    
+
+
+                    if (int.TryParse(CombPasci.SelectedValue.ToString(), out var sidpas))
+                    {
+                        var Agendda = _usuarioService.GetById<Entity_Usuario>(sidpas);
+                        consult.Paciente = Agendda;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Limite de Pacientes Atingido", @"SACPS", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         
@@ -72,16 +90,23 @@ namespace APP.Forms.Cadastro
                 {
                     if (int.TryParse(TXT_ID.Text, out var id))
                     {
-                        var procedimentoo = _ConsultaService.GetById<Entity_Consulta>(id);
-                        PreencheObjeto(procedimentoo);
-                        procedimentoo = _ConsultaService.Update<Entity_Consulta, Entity_Consulta, ValidaConsulta>(procedimentoo);
+                        var Consultas = _ConsultaService.GetById<Entity_Consulta>(id);
+                        PreencheObjeto(Consultas);
+                        Consultas = _ConsultaService.Update<Entity_Consulta, Entity_Consulta, ValidaConsulta>(Consultas);
                     }
                 }
                 else
                 {
-                    var procedimentoo = new Entity_Consulta();
-                    PreencheObjeto(procedimentoo);
-                    _ConsultaService.Add<Entity_Consulta, Entity_Consulta, ValidaConsulta>(procedimentoo);
+                    var Consultas = new Entity_Consulta();
+                    PreencheObjeto(Consultas);
+                    if (IsVaga(Consultas.Agenda.Id))
+                    {
+                        _ConsultaService.Add<Entity_Consulta, Entity_Consulta, ValidaConsulta>(Consultas);
+
+                    } else
+                    {
+                        MessageBox.Show("Limite de Pacientes Atingido", @"SACPS", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
 
                 }
 
@@ -112,6 +137,7 @@ namespace APP.Forms.Cadastro
             .Where(c => c.Ativa == true).Where(x => x.Realizada == false)
             .ToList();
             dataGridViewConsulta.DataSource = Agedaa;
+            dataGridViewConsulta.Columns["DataAgenda"].DefaultCellStyle.Format = "dd/MM/yyyy";
             dataGridViewConsulta.Columns["Id"]!.Visible = false;
             dataGridViewConsulta.Columns["Ativa"]!.Visible = false;
             dataGridViewConsulta.Columns["Nome_Medico"]!.Visible = false;
@@ -152,5 +178,21 @@ namespace APP.Forms.Cadastro
         {
 
         }
+
+        private int GetVagas(int selectedAgendaId)
+        {
+            var agenda = _agendaService.GetById<Entity_Agenda>(selectedAgendaId);
+
+            var consultas = _ConsultaService.Get<Entity_Consulta>().Where(x => x.Agenda.Id == selectedAgendaId).Count();
+            return consultas;
+        }
+
+        private bool IsVaga(int selectAgendaID)
+        {
+            var agenda = _agendaService.GetById<Entity_Agenda>(selectAgendaID);
+
+            return GetVagas(selectAgendaID) < agenda.Vagas ? true : false;
+        }
+ 
     }
 }

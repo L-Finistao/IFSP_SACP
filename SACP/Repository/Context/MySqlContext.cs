@@ -1,4 +1,5 @@
-﻿    using Domain.Entities;
+﻿using Domain.Entities;
+
 using Microsoft.EntityFrameworkCore;
 using Repository.Mapping;
 using System;
@@ -18,6 +19,7 @@ namespace Repository.Context
             ChangeTracker.LazyLoadingEnabled = false;
         }
 
+        public DbSet<Usuario>? Usuario { get; set; }
         public DbSet<Entity_Agenda>? Agenda{ get; set; }
         public DbSet<Entity_Consulta>? Consulta { get; set; }
         public DbSet<Entity_Procedimento>? Procedimento{ get; set; }
@@ -29,6 +31,7 @@ namespace Repository.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<Usuario>(new UsuarioMap().Configure);
             modelBuilder.Entity<Entity_Usuario>(new Entity_MapUsuario().Configure);
             modelBuilder.Entity<Entity_Usuario_Medico>(new Entity_MapUsuarioMedico().Configure);
             modelBuilder.Entity<Entity_Procedimento>(new Entity_MapProcedimento().Configure);

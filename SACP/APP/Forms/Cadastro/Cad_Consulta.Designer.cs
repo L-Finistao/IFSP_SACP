@@ -28,119 +28,147 @@
         /// </summary>
         private void InitializeComponent()
         {
-            CombAgenda = new ReaLTaiizor.Controls.MaterialComboBox();
-            CombPasci = new ReaLTaiizor.Controls.MaterialComboBox();
-            TXT_ID = new ReaLTaiizor.Controls.MaterialLabel();
-            CheckRealizado = new ReaLTaiizor.Controls.MaterialCheckBox();
-            materialTabControl.SuspendLayout();
-            tabPageCadastro.SuspendLayout();
-            SuspendLayout();
+            this.CombAgenda = new ReaLTaiizor.Controls.MaterialComboBox();
+            this.CombPasci = new ReaLTaiizor.Controls.MaterialComboBox();
+            this.TXT_ID = new ReaLTaiizor.Controls.MaterialLabel();
+            this.CheckRealizado = new ReaLTaiizor.Controls.MaterialCheckBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.materialTabControl.SuspendLayout();
+            this.tabPageCadastro.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.SuspendLayout();
             // 
             // materialTabControl
             // 
-            materialTabControl.Size = new Size(373, 317);
+            this.materialTabControl.Size = new System.Drawing.Size(473, 416);
             // 
             // tabPageCadastro
             // 
-            tabPageCadastro.Controls.Add(CheckRealizado);
-            tabPageCadastro.Controls.Add(TXT_ID);
-            tabPageCadastro.Controls.Add(CombPasci);
-            tabPageCadastro.Controls.Add(CombAgenda);
-            tabPageCadastro.Size = new Size(365, 282);
-            tabPageCadastro.Click += tabPageCadastro_Click;
-            tabPageCadastro.Controls.SetChildIndex(CombAgenda, 0);
-            tabPageCadastro.Controls.SetChildIndex(CombPasci, 0);
-            tabPageCadastro.Controls.SetChildIndex(TXT_ID, 0);
-            tabPageCadastro.Controls.SetChildIndex(CheckRealizado, 0);
+            this.tabPageCadastro.Controls.Add(this.groupBox2);
+            this.tabPageCadastro.Controls.Add(this.groupBox1);
+            this.tabPageCadastro.Controls.Add(this.CheckRealizado);
+            this.tabPageCadastro.Controls.Add(this.TXT_ID);
+            this.tabPageCadastro.Size = new System.Drawing.Size(465, 381);
+            this.tabPageCadastro.Controls.SetChildIndex(this.TXT_ID, 0);
+            this.tabPageCadastro.Controls.SetChildIndex(this.CheckRealizado, 0);
+            this.tabPageCadastro.Controls.SetChildIndex(this.groupBox1, 0);
+            this.tabPageCadastro.Controls.SetChildIndex(this.groupBox2, 0);
             // 
             // CombAgenda
             // 
-            CombAgenda.AutoResize = false;
-            CombAgenda.BackColor = Color.FromArgb(255, 255, 255);
-            CombAgenda.Depth = 0;
-            CombAgenda.DrawMode = DrawMode.OwnerDrawVariable;
-            CombAgenda.DropDownHeight = 174;
-            CombAgenda.DropDownStyle = ComboBoxStyle.DropDownList;
-            CombAgenda.DropDownWidth = 121;
-            CombAgenda.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
-            CombAgenda.ForeColor = Color.FromArgb(222, 0, 0, 0);
-            CombAgenda.FormattingEnabled = true;
-            CombAgenda.Hint = "Agenda";
-            CombAgenda.IntegralHeight = false;
-            CombAgenda.ItemHeight = 43;
-            CombAgenda.Location = new Point(20, 32);
-            CombAgenda.MaxDropDownItems = 4;
-            CombAgenda.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
-            CombAgenda.Name = "CombAgenda";
-            CombAgenda.Size = new Size(335, 49);
-            CombAgenda.StartIndex = 0;
-            CombAgenda.TabIndex = 11;
+            this.CombAgenda.AutoResize = false;
+            this.CombAgenda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.CombAgenda.Depth = 0;
+            this.CombAgenda.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.CombAgenda.DropDownHeight = 174;
+            this.CombAgenda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CombAgenda.DropDownWidth = 121;
+            this.CombAgenda.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.CombAgenda.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.CombAgenda.FormattingEnabled = true;
+            this.CombAgenda.Hint = "Agenda";
+            this.CombAgenda.IntegralHeight = false;
+            this.CombAgenda.ItemHeight = 43;
+            this.CombAgenda.Location = new System.Drawing.Point(39, 22);
+            this.CombAgenda.MaxDropDownItems = 4;
+            this.CombAgenda.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            this.CombAgenda.Name = "CombAgenda";
+            this.CombAgenda.Size = new System.Drawing.Size(335, 49);
+            this.CombAgenda.StartIndex = 0;
+            this.CombAgenda.TabIndex = 11;
             // 
             // CombPasci
             // 
-            CombPasci.AutoResize = false;
-            CombPasci.BackColor = Color.FromArgb(255, 255, 255);
-            CombPasci.Depth = 0;
-            CombPasci.DrawMode = DrawMode.OwnerDrawVariable;
-            CombPasci.DropDownHeight = 174;
-            CombPasci.DropDownStyle = ComboBoxStyle.DropDownList;
-            CombPasci.DropDownWidth = 121;
-            CombPasci.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
-            CombPasci.ForeColor = Color.FromArgb(222, 0, 0, 0);
-            CombPasci.FormattingEnabled = true;
-            CombPasci.Hint = "Paciente";
-            CombPasci.IntegralHeight = false;
-            CombPasci.ItemHeight = 43;
-            CombPasci.Location = new Point(20, 87);
-            CombPasci.MaxDropDownItems = 4;
-            CombPasci.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
-            CombPasci.Name = "CombPasci";
-            CombPasci.Size = new Size(335, 49);
-            CombPasci.StartIndex = 0;
-            CombPasci.TabIndex = 12;
+            this.CombPasci.AutoResize = false;
+            this.CombPasci.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.CombPasci.Depth = 0;
+            this.CombPasci.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.CombPasci.DropDownHeight = 174;
+            this.CombPasci.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CombPasci.DropDownWidth = 121;
+            this.CombPasci.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.CombPasci.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.CombPasci.FormattingEnabled = true;
+            this.CombPasci.Hint = "Paciente";
+            this.CombPasci.IntegralHeight = false;
+            this.CombPasci.ItemHeight = 43;
+            this.CombPasci.Location = new System.Drawing.Point(39, 22);
+            this.CombPasci.MaxDropDownItems = 4;
+            this.CombPasci.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            this.CombPasci.Name = "CombPasci";
+            this.CombPasci.Size = new System.Drawing.Size(335, 49);
+            this.CombPasci.StartIndex = 0;
+            this.CombPasci.TabIndex = 12;
             // 
             // TXT_ID
             // 
-            TXT_ID.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            TXT_ID.AutoSize = true;
-            TXT_ID.Depth = 0;
-            TXT_ID.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            TXT_ID.Location = new Point(346, 3);
-            TXT_ID.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
-            TXT_ID.Name = "TXT_ID";
-            TXT_ID.Size = new Size(16, 19);
-            TXT_ID.TabIndex = 14;
-            TXT_ID.Text = "ID";
+            this.TXT_ID.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TXT_ID.AutoSize = true;
+            this.TXT_ID.Depth = 0;
+            this.TXT_ID.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.TXT_ID.Location = new System.Drawing.Point(442, 3);
+            this.TXT_ID.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            this.TXT_ID.Name = "TXT_ID";
+            this.TXT_ID.Size = new System.Drawing.Size(16, 19);
+            this.TXT_ID.TabIndex = 14;
+            this.TXT_ID.Text = "ID";
             // 
             // CheckRealizado
             // 
-            CheckRealizado.AutoSize = true;
-            CheckRealizado.Depth = 0;
-            CheckRealizado.Location = new Point(20, 148);
-            CheckRealizado.Margin = new Padding(0);
-            CheckRealizado.MouseLocation = new Point(-1, -1);
-            CheckRealizado.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
-            CheckRealizado.Name = "CheckRealizado";
-            CheckRealizado.ReadOnly = false;
-            CheckRealizado.Ripple = true;
-            CheckRealizado.Size = new Size(105, 37);
-            CheckRealizado.TabIndex = 15;
-            CheckRealizado.Text = "Realizado";
-            CheckRealizado.UseAccentColor = false;
-            CheckRealizado.UseVisualStyleBackColor = true;
+            this.CheckRealizado.AutoSize = true;
+            this.CheckRealizado.Depth = 0;
+            this.CheckRealizado.Location = new System.Drawing.Point(6, 215);
+            this.CheckRealizado.Margin = new System.Windows.Forms.Padding(0);
+            this.CheckRealizado.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.CheckRealizado.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            this.CheckRealizado.Name = "CheckRealizado";
+            this.CheckRealizado.ReadOnly = false;
+            this.CheckRealizado.Ripple = true;
+            this.CheckRealizado.Size = new System.Drawing.Size(105, 37);
+            this.CheckRealizado.TabIndex = 15;
+            this.CheckRealizado.Text = "Realizado";
+            this.CheckRealizado.UseAccentColor = false;
+            this.CheckRealizado.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.CombAgenda);
+            this.groupBox1.Location = new System.Drawing.Point(6, 25);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(452, 81);
+            this.groupBox1.TabIndex = 16;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Agenda";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.CombPasci);
+            this.groupBox2.Location = new System.Drawing.Point(6, 112);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(452, 98);
+            this.groupBox2.TabIndex = 17;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Paciente";
             // 
             // Cad_Consulta
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(379, 384);
-            Location = new Point(0, 0);
-            Name = "Cad_Consulta";
-            Text = "Agendamento de Consulta";
-            materialTabControl.ResumeLayout(false);
-            tabPageCadastro.ResumeLayout(false);
-            tabPageCadastro.PerformLayout();
-            ResumeLayout(false);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(479, 483);
+            this.Location = new System.Drawing.Point(0, 0);
+            this.Name = "Cad_Consulta";
+            this.Text = "Agendamento de Consulta";
+            this.materialTabControl.ResumeLayout(false);
+            this.tabPageCadastro.ResumeLayout(false);
+            this.tabPageCadastro.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
@@ -149,5 +177,7 @@
         private ReaLTaiizor.Controls.MaterialComboBox CombAgenda;
         private ReaLTaiizor.Controls.MaterialLabel TXT_ID;
         private ReaLTaiizor.Controls.MaterialCheckBox CheckRealizado;
+        private GroupBox groupBox2;
+        private GroupBox groupBox1;
     }
 }

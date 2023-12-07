@@ -1,4 +1,6 @@
 
+using App.Cadastro;
+using App.Outros;
 using APP.Base.Registro;
 using APP.Forms.Cadastro;
 using APP.infra;
@@ -12,13 +14,32 @@ namespace IFSPStore.App
 {
     public partial class FormPrincipal : MaterialForm
     {
+        public static Usuario Usuario { get; set; }
+
 
         public FormPrincipal()
         {
+           
+
             InitializeComponent();
+            CarregaLogin();
         }
 
-
+        private void CarregaLogin()
+        {
+            var login = ConfigureDI.ServicesProvider!.GetService<Login>();
+            if (login != null && !login.IsDisposed)
+            {
+                if (login.ShowDialog() != DialogResult.OK)
+                {
+                    Environment.Exit(0);
+                }
+                else
+                {
+                    lblUsuario.Text = $"Usuário: {Usuario.Nome}";
+                }
+            }
+        }
 
         private void FormPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -63,6 +84,7 @@ namespace IFSPStore.App
 
         }
 
+        //Cadastro de Usuario / Paciente
         private void toolStripMenuItem4_Click(object sender, EventArgs e)
         {
             Exibeformulario<Cad_Usuario>();
@@ -106,6 +128,16 @@ namespace IFSPStore.App
         private void historicoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Exibeformulario<FormReportCurso>();
+        }
+
+        private void toolStripStatusLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void usuarioToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Exibeformulario<CadastroUsuario>();
         }
     }
 }

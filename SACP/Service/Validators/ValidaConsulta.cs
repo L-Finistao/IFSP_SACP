@@ -12,12 +12,14 @@ namespace Service.Validators
     {
         public ValidaConsulta() {
 
-            RuleFor(c => c.Paciente)
+            
+             RuleFor(c => c.Paciente)
     .NotEmpty().WithMessage("Por favor informe o Paciente.")
     .NotNull().WithMessage("Por favor informe o Paciente.");
             RuleFor(c => c.Agenda)
     .NotEmpty().WithMessage("Por favor informe a Agenda.")
     .NotNull().WithMessage("Por favor informe a Agenda.");
+
 
         }
     }
